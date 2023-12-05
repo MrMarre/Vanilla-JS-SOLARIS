@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --sun-border-radius: 50%;
+    --planet-border-radius: 50%;
+    --main-header-font: 'Secular one';
+    --sub-header-font: 'Lora';
+
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    height: 100vh;
+}
+
+.landing-page {
+    height: 100%;
+    overflow: hidden;
+}
+
+.solaris-container {
+    height: 100%;
+}
+
+.gradient {
+    background-image: linear-gradient(to right, #0C164D, #190B22);
+}
+
+.header {
+
+    font-family: var(--main-header-font);
+    font-size: 3.75rem;
+    font-weight: 400;
+    letter-spacing: 0.338rem;
+    text-align: right;
+    color: #FFFFFF;
+    padding: 4.5rem 4.25rem 0 0;
+}
+
+.sub-header {
+    color: #FFD029;
+    text-align: right;
+    font-family: var(--sub-header-font);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    /* 24px */
+    letter-spacing: 0.9rem;
+    padding: 0 4.25rem 0 0;
+}
+
+/* #region planets */
+.planet-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.planet-container * {
+    border-radius: var(--planet-border-radius);
+    cursor: pointer;
+    box-shadow: inset -1.5rem -1.5rem 2.5rem rgba(0, 0, 0, .5);
+}
+
+.planet-container figure:not(:first-child) {
+    margin-top: -20rem;
+}
+
+.solen {
+    height: 100rem;
+    width: 100rem;
+    margin-left: -100rem;
+    margin-top: -21rem;
+    background-color: #FFD029;
+    border-radius: 50%;
+}
+
+.merkurius {
+    position: relative;
+    height: 0.875rem;
+    width: 0.875rem;
+    background-color: #888888;
+}
+
+.venus {
+    height: 1.625rem;
+    width: 1.625rem;
+    background-color: #E7CDCD;
+}
+
+.jorden {
+    height: 1.75rem;
+    width: 1.75rem;
+    background-color: #428ED4;
+}
+
+.mars {
+    height: 0.875rem;
+    width: 0.875rem;
+    background-color: #EF5F5F;
+}
+
+.jupiter {
+    height: 11.75rem;
+    width: 11.75rem;
+    background-color: #E29468;
+}
+
+.saturnus {
+    position: relative;
+    height: 9rem;
+    width: 9rem;
+    background-color: #C7AA72;
+}
+
+.saturnus::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12.5rem;
+    height: 0.5rem;
+    background-color: white;
+    opacity: 0.3;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(135deg);
+    box-shadow: 0 0 0 0.25rem #C7AA72;
+}
+
+.uranus {
+    height: 4.125rem;
+    width: 4.125rem;
+    background-color: #C9D4F1;
+}
+
+.neptunus {
+    height: 4.125rem;
+    width: 4.125rem;
+    background-color: #7A91A7;
+}
+
+/* #endregion planets */
+
+/* #region infopage */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Class working as a template for each chosen planet where color changes depending on user input*/
+.template-planet {
+    position: absolute;
+    height: 100rem;
+    width: 100rem;
+    left: -90rem;
+    top: -10rem;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0 0 0 40px rgba(231, 205, 205, 0.1), 0 0 0 80px rgba(231, 205, 205, 0.06);
+    border-radius: 50%;
+}
+
+.info-box {
+    height: 42.63rem;
+    width: 48rem;
+    margin: 6.31rem auto 7.31rem auto;
+    position: relative;
+}
+
+button {
+    position: absolute;
+    top: 5.7rem;
+    right: 0;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+}
+
+/*  below for grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    line-height: 1.91rem;
+}
+
+.grid-container section:nth-child(-n+2) {
+    border-top: 1px solid rgba(255, 255, 255, 0.200);
+    padding-top: 1.5rem;
+}
+
+.grid-container section:nth-child(n+3):nth-child(-n+4) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.200);
+}
+
+.grid-container section:nth-child(5) {
+    grid-column: span 2;
+    padding-top: 1.5rem;
+}
+
+/* above for grid */
+.info-box .header,
+.latin-name {
+    text-align: left;
+    padding-bottom: 2rem;
+}
+
+.info-box section h3 {
+    font-family: var(--main-header-font);
+    font-size: 1.125rem;
+    color: #FFFFFF;
+    letter-spacing: 0.101rem;
+}
+
+.info-box .description,
+p {
+    font-family: 'Roboto Condensed';
+    color: #FFFFFF;
+    font-size: 1.125rem;
+}
+
+.description {
+    line-height: 1.913rem;
+    overflow-y: auto;
+    max-height: 18rem;
+}
+
+.info-box p {
+    letter-spacing: 0.18rem;
+    line-height: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* #endregion infopage */

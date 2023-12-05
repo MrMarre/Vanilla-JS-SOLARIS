@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Solaris</title>
+</head>
+
+<body>
+    <main class="landing-page gradient">
+        <!-- tillfällig HIDDEN-->
+        <article class="solaris-container ">
+            <h1 class="header">SOLSYSTEMET</h1>
+            <p class="sub-header">SOLARIS</p>
+            <section class="planet-container">
+            </section>
+        </article>
+    </main>
+    <div class="overlay gradient hidden"><!-- hidden sedan -->
+        <article class="template-planet"></article>
+        <figcaption class="info-box">
+            <button>&#10005</button>
+            <h1 class="planet-name header"></h1>
+            <h3 class="latin-name sub-header"></h3>
+            <p class="description"></p>
+            <article class="grid-container">
+                <section>
+                    <h3>OMKRETS</h3>
+                    <p id="circumference"></p>
+                </section>
+                <section>
+                    <h3>KM FRÅN SOLEN</h3>
+                    <p id="distance"></p>
+                </section>
+                <section>
+                    <h3>MAX TEMPERATUR</h3>
+                    <p id="temp_day"></p>
+                </section>
+                <section>
+                    <h3>MIN TEMPERATUR</h3>
+                    <p id="temp_night"></p>
+                </section>
+                <section>
+                    <h3>MÅNAR</h3>
+                    <p id="moons"></p>
+                </section>
+            </article>
+        </figcaption>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

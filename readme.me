@@ -1,0 +1,21 @@
+Jag valde att i slutskedet av mitt arbete placera DOM-selektorer högst uppe i JS-filen - för förbättrad läsbarhet. Därefter kommer såväl KEY-fetch som DATA-fetch som invokas längst ner i dokumentet med en så kallad "IIFE" (Immediately Invoked Function Expression) då jag förstått att det kan ses som praxis i mindre projekt med en JS-fil. 
+
+Därefter skapades funktionen printOutPlanets() som ansvarar för att rendera ut en figure per planet/stjärna på FIGMA-skissen. Därefter matchade jag dem med de klasser för styling (som jag initialt hårdkodade placering för i index.html - men jag ville utmana mig själv) baserat på dess namn i API:et. Vidare så ville jag försäkra mig om att färgen för respektive planet "följde med", vilket förklarar min getComputedStyle() & getPropertyValue() - på rad 84-85. 
+
+ShowPlanetPage() & hideInfo() ansvarar egentligen bara för display av respektive sida som båda återfinns i samma index.html. 
+
+ShowInfo() renderar innehåll för respektive planet på overlayen och matchar med tillhörande planet från API:et.
+Jag lade även till ett "special case" för planeter som saknar månar. 
+
+Stjärnhimlen: Inledningsvis gjorde jag en vanlig for-loop som för rendering av div-element, som genom manipulation kunde efterlikna en stjärnhimmel, i kombination med att testa runt lite olika z-index - senare valde jag dock en annan lösning där jag avslutningsvis testade att göra all styling via template-string-css, bara för skojs skull! 
+
+Jag upplever att koden i sin nuvarande form är både tydlig och underhållningsbar. Minimal html-struktur har användts, ändock så förstår jag att väldigt mycket mer vore möjligt att skapa upp genom ren JS. Bortsett från mina kommentarer (som lämnats kvar) så är koden kort och koncis, där jag efter förmåga försökt hålla namnen så tydliga och semantiska som möjligt. Flödet är enkelt då det i princip följer mönstret som den ordning användaren kan tänkas interagera med materialet. Tillägningsvis har jag delat upp min CSS i två regions för enklare revidering och underhållsbarhet.
+
+Vid nedbrytningen av min kod som gjordes innan inlämning så tog jag bort några onödigt krångliga forEach-loopar och modifierade dessa till enklare funktioner. Dock ansvarar den kvarvarande forEach-loopen för en hel del actions - vilket om möjligt hade kunna delats upp i fler, mindre forEach:es och/eller funktioner.
+
+Jag upplever uppgiften som lagom svår, då jag hunnit uppleva såväl toppar som dalar i hur arbetet förflutit. Nu, såhär på andra sidan, känner jag att befintliga kunskaper befästs och utvecklats med nya kunskaper. 
+
+Övrig info: Sidan har ej gjorts responsiv men ser ut som skissen på min monitor.
+
+Med vänlig hälsning
+Martin Kolberg
