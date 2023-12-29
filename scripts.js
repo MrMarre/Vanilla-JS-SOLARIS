@@ -1,7 +1,6 @@
 const baseURL = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com'; 
 let planets
 
-const landingPage = document.querySelector('.landing-page');
 const planetContainer = document.querySelector('.planet-container');
 const pages = document.querySelectorAll('.page');
 const button = document.querySelector('button');
@@ -17,23 +16,6 @@ const distanceFromSun = document.querySelector('#distance')
 const dayTemp = document.querySelector('#temp_day')
 const nightTemp = document.querySelector('#temp_night')
 const moons = document.querySelector('#moons')
-
-/*  TODO
--CHECK! Ringar runt planet vid infosida (samt saturnus) easy
-
-
--Kommentera upp kod, ge vettiga variabelnamn - pågående
--Att din kod är uppdelad i moduler där du har skrivit en kommentar i varje modul om varför du har delat upp som du gjort. (VG)
-- att det ser ut enligt skiss (styling)
-
-
--CHECK!! fixa solen 
-
--CHECK styra en scroll om texten är för lång på infosidan (vid laptop, optional)
-- CHECK!! stjärnor
-- CHECK månar saknas för denna planet (om det är så) CHECK!! 
-- CHECK!!! begripa varför jag inte kan klicka mig fram-och-tillbaks oändligt med ggr
-    TODO  */
 
 const getKey = async () => {
 try {
@@ -94,8 +76,7 @@ const printOutPlanets = (planets) => {
 } 
 
 const showPlanetPage = (planet) => {
-    landingPage.classList.add('hidden');
-    overlayPage.classList.remove('hidden');
+    overlayPage.style.display = 'flex';
     button.addEventListener('click', () => { //only button, thereby 'button'
         hideInfo() //skall en ha planet som param?
     })
@@ -103,8 +84,8 @@ const showPlanetPage = (planet) => {
  
 // function for what the button on the planet page does once there 
 const hideInfo = () => {
-    landingPage.classList.remove('hidden');
-    overlayPage.classList.add('hidden');
+    // landingPage.classList.remove('hidden');
+    overlayPage.style.display = 'none';
 }
 
 const showInfo = (planet) => {
@@ -135,7 +116,6 @@ const showInfo = (planet) => {
             let yAxle = randomRange(0, 100); //percentages
             let alpha = randomRange(0.3, 0.9); //opac
             let size = randomRange(2, 4); // between 2/4 pix
-
         //just for fun, trying some css-templateString just for the sake of it
         const star = document.createElement('div');
             star.classList.add('stars');
@@ -148,6 +128,7 @@ const showInfo = (planet) => {
             height: ${size}px;
             border-radius: 50%;
             background-color: #FFFFFF;
+            z-index: -1;
             `;
             overlayPage.appendChild(star);
         }
